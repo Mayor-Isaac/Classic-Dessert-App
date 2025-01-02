@@ -2,9 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
-
-   .loader {
+@layer components {
+  .loader {
     width: 45px;
     aspect-ratio: 0.75;
     --c: no-repeat linear-gradient(theme(colors.stone.800) 0 0);

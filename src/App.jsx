@@ -1,18 +1,15 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './Home';
+
+import Header from './Components/Header';
+import Cart from './Cart/Cart';
+import Menu from './Menu/Menu';
 
 export default function App() {
-  const details = useSelector((state) => state.page);
-
-  console.log(details);
-
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route index element={<Home />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="px-6 py-8">
+      <Header />
+      <Menu />
+      <Cart />
+    </div>
   );
 }
