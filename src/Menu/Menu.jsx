@@ -23,11 +23,11 @@ export default function Menu() {
     fetchData();
   }, []);
 
-  console.log(data);
+  // console.log(data);
 
   if (isLoading) return <Loader />;
   return (
-    <ul>
+    <ul className="mt-10 w-[80%]">
       {data.map((item) => (
         <MenuItem item={item} key={item.name} />
       ))}

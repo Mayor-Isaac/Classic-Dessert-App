@@ -1,34 +1,48 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Button from '../Components/Button';
 
 import { formatCurrency } from '../Helper/formatCurrency';
-import { addToCart } from '../Cart/cartSlice';
+import {
+  addToCart,
+  getCurrentQuantityByName,
+  increaseQuantity,
+} from '../Cart/cartSlice';
+import UpdateItemQuantity from '../Cart/UpdateItemQuantity';
 
 export default function MenuItem({ item }) {
   const dispatch = useDispatch();
 
   const { category, image, name, price } = item;
 
+  const currentQuantity = useSelector(getCurrentQuantityByName(name));
+
+  const isInCart = currentQuantity > 0;
+
   function addItem() {
     const newItem = {
       name,
       price,
       image,
+      quantity: 1,
+      totalPrice: price * 1,
     };
     dispatch(addToCart(newItem));
   }
 
   return (
-    <li className="py-3">
+    <li className=" py-3">
       <div className="relative h-60">
         <img
           className="h-full w-full rounded-2xl"
           src={image.mobile}
           alt={name}
         />
-        <Button type="add" handleClick={addItem} />
+        {!isInCart ? (
+          <Button type="add" handleClick={addItem} />
+        ) : (
+          <UpdateItemQuantity name={name} currentQuantity={currentQuantity} />
+        )}
       </div>
       <div className="mt-10">
         <p className="text-sm text-stone-400 ">{category}</p>

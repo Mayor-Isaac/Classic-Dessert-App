@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Button({ type, handleClick }) {
+export default function Button({ type, handleClick, children }) {
   if (type === 'delete')
     return (
       <button
@@ -11,6 +11,23 @@ export default function Button({ type, handleClick }) {
       </button>
     );
 
+  if (type === 'round')
+    return (
+      <button onClick={handleClick}>
+        <div className="flex h-4 w-4 items-center justify-center rounded-full border border-white hover:bg-white ">
+          {children}
+        </div>
+      </button>
+    );
+  if (type === 'confirm')
+    return (
+      <button
+        onClick={handleClick}
+        className="w-full rounded-full bg-red-600  py-4 text-base text-white"
+      >
+        Confirm Order
+      </button>
+    );
   return (
     <button
       onClick={handleClick}
