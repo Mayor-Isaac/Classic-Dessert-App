@@ -27,7 +27,7 @@ export default function Menu() {
 
   if (isLoading) return <Loader />;
   return (
-    <ul className="mt-10 w-[80%]">
+    <ul className="mt-10">
       {data.map((item) => (
         <MenuItem item={item} key={item.name} />
       ))}

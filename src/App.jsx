@@ -11,7 +11,9 @@ export default function App() {
         <Header />
         <Menu />
       </div>
-      <Cart />
+      <div>
+        <Cart />
+      </div>
     </div>
   );
 }

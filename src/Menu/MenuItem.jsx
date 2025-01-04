@@ -32,12 +32,20 @@ export default function MenuItem({ item }) {
 
   return (
     <li className=" py-3">
-      <div className="relative h-60">
-        <img
-          className="h-full w-full rounded-2xl"
-          src={image.mobile}
-          alt={name}
-        />
+      <div className="relative h-60 ">
+        {isInCart ? (
+          <img
+            className="h-full w-full rounded-2xl border-[3px] border-red-600"
+            src={image.mobile}
+            alt={name}
+          />
+        ) : (
+          <img
+            className="h-full w-full rounded-2xl"
+            src={image.mobile}
+            alt={name}
+          />
+        )}
         {!isInCart ? (
           <Button type="add" handleClick={addItem} />
         ) : (

@@ -23,9 +23,9 @@ export default function Button({ type, handleClick, children }) {
     return (
       <button
         onClick={handleClick}
-        className="w-full rounded-full bg-red-600  py-4 text-base text-white"
+        className="w-full rounded-full bg-red-600 py-4 text-base text-white  transition-all duration-200 hover:bg-red-800"
       >
-        Confirm Order
+        {children}
       </button>
     );
   return (
