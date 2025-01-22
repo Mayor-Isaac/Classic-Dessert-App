@@ -27,7 +27,7 @@ export default function Menu() {
 
   if (isLoading) return <Loader />;
   return (
-    <ul className="mt-10">
+    <ul className="mt-10 grid w-auto gap-4  md:h-[calc(100vh-5rem)] md:overflow-y-scroll lg:grid-cols-3">
       {data.map((item) => (
         <MenuItem item={item} key={item.name} />
       ))}
