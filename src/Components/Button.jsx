@@ -31,7 +31,7 @@ export default function Button({ type, handleClick, children }) {
   return (
     <button
       onClick={handleClick}
-      className="absolute -bottom-5 left-[38%] flex items-center justify-center gap-2 rounded-full border border-stone-400 bg-yellow-50 px-6 py-2 text-black transition-all duration-300 hover:border-orange-400 hover:text-orange-500 "
+      className="absolute -bottom-5 left-[25%] flex w-[50%] items-center justify-center gap-2 rounded-full border border-stone-400 bg-yellow-50 px-6 py-2 text-black transition-all duration-300 hover:border-orange-400 hover:text-orange-500 lg:left-[10%] lg:w-[80%] "
     >
       <img src="./images/icon-add-to-cart.svg" alt="Add to cart icon" />
       <p className="font-semibold ">Add to Cart</p>

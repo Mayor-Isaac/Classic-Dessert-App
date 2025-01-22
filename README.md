@@ -1,6 +1,6 @@
 # Dessert Shopping Webpage
 
-![Design preview for the Space tourism website coding challenge](./preview.jpg)
+![Design preview for the Dessert Shopping App](./preview.jpg)
 
 ## Welcome! 👋
 

@@ -9,10 +9,11 @@ export default function Order({ cart, totalCartPrice }) {
   const dispatch = useDispatch();
   function handleClear() {
     dispatch(clearCart());
+    document.body.style.overflow = 'scroll';
   }
   return (
     <div className="absolute inset-0 z-20 bg-orange-500/20 backdrop-blur-sm">
-      <div className="mx-auto w-[90%]  rounded-xl bg-white px-8 py-10">
+      <div className="mx-auto w-[85%] rounded-xl bg-white px-8 py-10 lg:my-auto lg:w-[45%]">
         <img src="./images/icon-order-confirmed.svg" alt="" />
         <p className="py-4 text-4xl font-black">Order Confirmed</p>
         <p className="text-sm font-thin text-orange-800">

@@ -11,6 +11,11 @@ export default function ActiveCart({ cart, totalCartPrice }) {
 
   function handleConfirm() {
     dispatch(showOrderedItems());
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+    document.body.style.overflow = 'hidden';
   }
 
   return (
